@@ -1,0 +1,157 @@
+github.com
+JoseLimonV
+
+GIT
+
+pwd --Shows where you at in command line (Location directory)
+git version -- gives you the git version installed
+
+-------Configure your user name and email into git----------
+git config --global user.name "Jose Limon"
+git config --global user.email "jgpe.lim@gmail.com"
+
+----------get user name and email----------
+git config --global --list
+
+----------clone your github repository
+git clone https://github.com/JoseLimonV/github-demo.git
+
+----------Get in which branch you are and to see changes-------------
+git status
+
+---Master branch is default branch by convention in a git repository
+
+--Create document with text in it----
+$ echo "Test Git Quick Start demo" >> start.txt
+
+git status === tells if there are new items
+git add -FileName- === Adds item to staging area
+git commit -m "adding text file" == Adds file to repository with a message
+git push origin master == sends to master branch in github
+
+---------------Agregar notepad++ a git --------------
+control panel--Conf Avanzada--Variables de entorno--Variables de sistema--path agregar el path de notepad ++ se seprara con ; 
+checar si se agrego correctamente
+cmd
+escribir dentro notepad++  --Abrira la app
+
+from git, write 
+	notepad++ .bashrc
+inside notepad++ write and save
+	alias npp='notepad++.exe -multiInst -nosession'
+From git, to set up npp as your text editor
+	git config --global core.editor "notepad++.exe -multiInst -nosession"
+to check the default editor
+	npp .gitconfig -----it opens npp with user, email and editor info
+
+----------------------------------------------
+~ -- How we reference our users Home directory
+
+unzip ~/Downloads/zipped file
+
+git init -- uses current folder as the git's current working directory also adds the .git repository
+git add . -- adds all the files and recursively
+
+----- remove project from git ---------
+rm -rf .git
+rm -rf MyProject
+
+------------------------------------
+ls -al also displays hidden files
+npp hipster.txt --creates and opens file with the name hipster.txt
+
+-----get latest code version to our local machine-----
+git pull origin master
+
+-----git add and commit in one line-------
+git commit -am "adding more text"
+can only be done with files that are tracked
+
+Tracked file -- Any file that has already been commited into the git repository or has been added to the git index or the staging area
+
+git ls-files ---displays all the tracked files
+
+----------------------------------------------
+
+Create folder and folders inside it at the same time
+	mkdir -p level1/2/3/4
+-------------------------------------
+Backing out changes
+	git reset HEAD FileName    *unstage
+	git checkout -- FileName   *ROlls back changes
+-------------------------------------------------
+
+Delete files in git
+
+rm  ------------deletes files
+git rm FileName --- Removes tracked file... you must commit your change
+
+-------undo git rm----------
+git reset HEAD fileName
+git checkout -- fileName
+------------------------------
+-----If you use rm, use the below after the rm----
+git add -A  adds to staging area any changes, including deletions
+
+Example
+rm -rf Directory
+git add -A
+git commit -m "Deleted Directory and everything inside it"
+
+---------------------------
+git help ----- displays git help and usual git commands
+git help <Command>   -------displays specific help for a command
+
+
+git log ---- displays commits history
+git log --abbrev-commit  -------shorts commit id displayed
+git log --oneline --graph --decorate ------ display entries in one line, graphic and color
+git log <StartCommitId>...<EndCommitId> -----displays range of commits
+git log --since="3 days -----Brings last 3 days logs
+git log -- FileName
+git log --follow --FilePath   -----Displays file history
+
+git show <CommitId> ----Displays full commit information
+
+------------Aliases in git----------------
+How to create a command alias
+	git config --global alias.<alias> "Command"
+how to call the alias
+	git <alias>
+
+location of the alias
+npp ~/.gitconfig
+
+------------Ignore files-------------
+add them into .gitignore file
+If .gitignore doesn´t exist, create it
+After you added the file into .gitignore, you need to add, commit and push the .gitignore file
+	Examples
+		File.txt
+		*.txt
+		Directory/
+
+----------------Visual Merge diff tool----------
+Get P4Merge tool,
+add its path to the env variables
+Add P4merge tool to git (Diff)
+	git config --global diff.tool p4merge
+	git config --global difftool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+	git config --global difftool.prompt false
+
+Check settings
+	 git config --global --list
+
+Add P4merge tool to git (Merge)
+	git config --global merge.tool p4merge
+	git config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+	git config --global mergetool.prompt false
+
+
+
+
+
+
+
+
+
