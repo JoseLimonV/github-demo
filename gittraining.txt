@@ -148,6 +148,28 @@ Add P4merge tool to git (Merge)
 	git config --global mergetool.prompt false
 
 
+-----------------------------------------------------
+
+git diff -- Brings differences in file if no parameters, it diferentiates
+		between what is in your working directory and what is staged
+
+git difftool -- brings the tool you added to git with the differences between 
+		the files that are in your working area and the ones in 
+		staging area
+
+git diff HEAD		-- cOMPARES working directoey with what is in .git folder
+
+git difftool HEAD	""
+
+git diff --staged HEAD  -- Compares staged area with .git repository
+git diff --staged HEAD  ""
+
+If there are more thand one file with updates, diff will give you the differences for all files
+to get the differences for a single file
+	
+	git diff -- FileName
+
+
 
 
 
