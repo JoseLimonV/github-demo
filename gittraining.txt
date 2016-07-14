@@ -240,5 +240,12 @@ After merged conflicting problems with rebase, to continue rebase:
 	git rebase --continue
 
 ----Pull with Rebase-----
+to update references between local and remote repository, use fetch command
+
+	git frtch origin master
+
+To get the changes from git hub and keep yours ahead
+you use 
+	git pull --rebase origin master
 
 
