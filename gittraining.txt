@@ -242,10 +242,68 @@ After merged conflicting problems with rebase, to continue rebase:
 ----Pull with Rebase-----
 to update references between local and remote repository, use fetch command
 
-	git frtch origin master
+	git fetch origin master
 
 To get the changes from git hub and keep yours ahead
 you use 
 	git pull --rebase origin master
+
+-----------------------------------------------
+Stash command
+For when you have a work in progress but can't be committed yet
+and you have to work in something that needs to commit right now
+
+	git stash
+		like it saves it in chache, if you do a git status, you won't see the updated file and
+		if you open the file you won't see the changes you made
+
+To open the stashed file
+	git stash apply
+		gives you a status and makes your stashed changes visible again
+		
+	
+	git stash list
+		displays a list of the stashed changes you've done
+	git stash drop
+		drops the last stash you did
+
+git stash only stashes the tracked files
+
+
+	git stash -u
+		stashes untracked files and tracked files at the same time
+	
+	git stash pop
+		unstashes (Makes visible your stashed changes) 
+		your change and dorps the stash
+
+	git stash save "msg"
+		stashes the file and adds a msg to be easier to diferentiate when multiple stashes
+	
+	git stash list
+		the first stash is the latest stashed file
+		the last stash is the first stashed file
+
+	git stash show stash@{1}
+		shows you the stash index you selected with file info
+
+	git stash apply stash@{1}
+		like the regular apply but unstashes the selected stash
+
+	git stash drop stash@{1}
+	
+
+	git stash clear
+		empties your stash list (like drop but for all the stashes)
+
+	
+	git stash branch NewChanges
+		creates branch with stashed content
+		moves you to the created branch
+		clears the stash list
+	
+
+	
+	
 
 
