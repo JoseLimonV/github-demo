@@ -169,10 +169,67 @@ to get the differences for a single file
 	
 	git diff -- FileName
 
+-------------------------------------------
+git log --oneline brings the commits history
 
+Diff between one commit and the latest commit
 
+git diff <CommitId> HEAD -----> HEAD points the last commit in our history
 
+git difftool <CommitId> HEAD
 
+-------------------------------------------------------
+Get diff between 2 commits
+
+git diff <CommitId1> <CommitId2>
+git difftool <CommitId1> <CommitId2>
+
+---------------------------------------------
+Compare between local and Remote Branches
+
+         local     remote
+git diff master origin/master
+
+git difftool master origin/master
+
+------------------------------------------------
+Branches
+git branch -a  -----lists all branches
+
+* master                            ------CUrrent branch you are using
+  remotes/origin/HEAD -> origin/master    ----Github branch
+  remotes/origin/master               ------ .git repository
+
+Create new branch
+	git branch NewBranch
+
+To switch to NewBranch
+	git checkout NewBranch
+
+Rename branch NewBranch to New    -m is move
+	git branch -m NewBranch New
+
+Delete a branch 
+	git branch -d New         -d is delete
+
+Create and switch to the created branch in one command
+	git checkout -b AnotherBranch    
+
+Check differences between branches
+	git diff master AnotherBranch
+	git difftool master AnotherBranch
+
+Merge branches fast forward
+	git merge AnotherBranch
+		It can only be done if ther are no commits pending in Master
+
+Merge not fast forward
+	git merge copyrightBr --no-ff
+
+-----------------------------------------------
+Conflicting merges and how to resolve them
+
+When 2devs create conflicting changes
 
 
 
