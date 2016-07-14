@@ -1,4 +1,4 @@
-github.com
+cd github.com
 JoseLimonV
 
 GIT
@@ -231,6 +231,14 @@ Conflicting merges and how to resolve them
 
 When 2devs create conflicting changes
 
+---------------------------------------------
+Rebase command
 
+git rebase master   -----adds the commits from master to the new branch
+
+After merged conflicting problems with rebase, to continue rebase:
+	git rebase --continue
+
+----Pull with Rebase-----
 
 
