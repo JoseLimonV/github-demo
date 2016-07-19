@@ -42,7 +42,7 @@ inside notepad++ write and save
 From git, to set up npp as your text editor
 	git config --global core.editor "notepad++.exe -multiInst -nosession"
 to check the default editor
-	npp .gitconfig -----it opens npp with user, email and editor info
+	npp .gitconfig -----it opens npp with user, email and editor info should be run in the users home directory
 
 ----------------------------------------------
 ~ -- How we reference our users Home directory
@@ -157,11 +157,11 @@ git difftool -- brings the tool you added to git with the differences between
 		the files that are in your working area and the ones in 
 		staging area
 
-git diff HEAD		-- cOMPARES working directoey with what is in .git folder
+git diff HEAD		-- cOMPARES working directoey with what is in commit area
 
 git difftool HEAD	""
 
-git diff --staged HEAD  -- Compares staged area with .git repository
+git diff --staged HEAD  -- Compares staged area with commit area
 git diff --staged HEAD  ""
 
 If there are more thand one file with updates, diff will give you the differences for all files
